@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<div align="center"><h1>Welcome Employee</h1></div><br /><br />
+<div>
+    @using (Html.BeginForm("AddData","Home",FormMethod.Post))
+    {
+        <h3>Name : </h3><input type="text" name="name" value="" class="form-control" /><br /><br />
+        <h3>Position : </h3><input type="text" name="position" value="" class="form-control" /><br /><br />
+        <h3>Office : </h3><input type="text" name="office" value="" class="form-control" /><br /><br />
+        <h3>Age : </h3><input type="text" name="Age" value="" class="form-control" /><br /><br />
+        <h3>Salary : </h3><input type="text" name="salary" value="" class="form-control" /><br /><br />
+        <input type="submit" name="submit" value="Add Record" class="btn btn-success" />
+    }
+    
+</div>
+
+
