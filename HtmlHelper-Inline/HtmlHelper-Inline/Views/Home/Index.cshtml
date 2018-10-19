@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @helper addmark(string content)
+        {
+            <mark>@content</mark>
+        }
+        <h2> Hello This is @addmark("helper content")</h2>
+
+        @helper generatetxt()
+        {
+            <input type="text" name="name" value="ClickMe">
+        }
+        @generatetxt()
+
+        <ul>
+            @helper ShowItems(string[] items)
+            {
+                for (var i = 0; i < items.Length; i++)
+                {
+                    <li>@items[i]</li>
+                }
+            }
+        </ul>
+        @ShowItems(new string[] { "Sams","BlackBook","PHP","Ionic",})
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿@model StronglyTyped_HtmlHelpers.Models.Employee
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <label>Employee ID</label>@Html.TextBoxFor(m => m.EmpId)<br />
+    <label>Employee Name</label>@Html.TextBoxFor(m => m.EmpName)<br />  
+    <label>Employee Address</label>@Html.TextBoxFor(m => m.Address)<br />
+    <input type="submit" name="name" value="Save"/>
+}
