@@ -1,0 +1,40 @@
+﻿@model DataAnnotations_and_Validations.Models.Employee
+@{
+    ViewBag.Title = "Home Page";
+}
+<div align="center">
+    <h1>Check Validations</h1>
+</div>
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(m => m.username)
+        @Html.TextBoxFor(m => m.username)
+        @Html.ValidationMessageFor(m => m.username)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.email)
+        @Html.TextBoxFor(m => m.email)
+        @Html.ValidationMessageFor(m => m.email)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.age)
+        @Html.TextBoxFor(m => m.age)
+        @Html.ValidationMessageFor(m => m.age)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.password)
+        @Html.PasswordFor(m => m.password)
+        @Html.ValidationMessageFor(m => m.password)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.repassword)
+        @Html.PasswordFor(m => m.repassword)
+        @Html.ValidationMessageFor(m => m.repassword)
+    </p>
+    <p>        
+        @Html.CheckBoxFor(m => m.Terms)Please Accept Our terms &amp; Conditions
+        @Html.ValidationMessageFor(m => m.Terms)
+    </p>
+    <input type="submit" name="btn" value="Check">
+}
