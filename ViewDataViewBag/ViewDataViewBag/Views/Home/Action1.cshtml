@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Action1";
+    string date = ViewData["viewdata1"].ToString();
+    string dateViewBag = ViewBag.viewbag1;
+}
+
+<h2>Action1</h2>
+<h3>View Data is : @ViewData["viewdata1"]</h3>
+<h3>View Data variable value is : @date</h3>
+<h3>View Bag value is : @ViewBag.viewbag1</h3>
+<h3>View Bag Variable value is : @dateViewBag</h3>
+<h2>ViewData ke andar ViewBag ka value pass kiya : @ViewData["viewbag1"]</h2>
+<h2>ViewBag ke andar ViewData ka value pass kiya : @ViewBag.viewdata1</h2>
