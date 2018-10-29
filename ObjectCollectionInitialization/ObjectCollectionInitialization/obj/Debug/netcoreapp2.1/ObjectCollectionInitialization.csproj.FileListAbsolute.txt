@@ -1,0 +1,11 @@
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\ObjectCollectionInitialization\ObjectCollectionInitialization\bin\Debug\netcoreapp2.1\ObjectCollectionInitialization.deps.json
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\ObjectCollectionInitialization\ObjectCollectionInitialization\bin\Debug\netcoreapp2.1\ObjectCollectionInitialization.runtimeconfig.json
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\ObjectCollectionInitialization\ObjectCollectionInitialization\bin\Debug\netcoreapp2.1\ObjectCollectionInitialization.runtimeconfig.dev.json
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\ObjectCollectionInitialization\ObjectCollectionInitialization\bin\Debug\netcoreapp2.1\ObjectCollectionInitialization.dll
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\ObjectCollectionInitialization\ObjectCollectionInitialization\bin\Debug\netcoreapp2.1\ObjectCollectionInitialization.pdb
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\ObjectCollectionInitialization\ObjectCollectionInitialization\obj\Debug\netcoreapp2.1\ObjectCollectionInitialization.csprojAssemblyReference.cache
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\ObjectCollectionInitialization\ObjectCollectionInitialization\obj\Debug\netcoreapp2.1\ObjectCollectionInitialization.csproj.CoreCompileInputs.cache
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\ObjectCollectionInitialization\ObjectCollectionInitialization\obj\Debug\netcoreapp2.1\ObjectCollectionInitialization.AssemblyInfoInputs.cache
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\ObjectCollectionInitialization\ObjectCollectionInitialization\obj\Debug\netcoreapp2.1\ObjectCollectionInitialization.AssemblyInfo.cs
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\ObjectCollectionInitialization\ObjectCollectionInitialization\obj\Debug\netcoreapp2.1\ObjectCollectionInitialization.dll
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\ObjectCollectionInitialization\ObjectCollectionInitialization\obj\Debug\netcoreapp2.1\ObjectCollectionInitialization.pdb
