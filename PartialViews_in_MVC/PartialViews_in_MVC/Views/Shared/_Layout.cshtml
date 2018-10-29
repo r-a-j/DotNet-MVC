@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    @{ 
+        var header = Html.Partial("_header");
+        header = new MvcHtmlString(header+ "<div><h3><p>This is Appended string in the html markup</p></h3></div>");
+    }
+
+    @header
+
+    @{ Html.RenderAction("Category", "Home");}
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+       @{Html.RenderPartial("_footer");}
+
+        @{ 
+            var data = Html.Action("Category", "Home");
+            data = new MvcHtmlString(data.ToString()+"<ul><li>This is my added ul li element By Render action method</li></ul>");
+        }
+
+        @data
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
