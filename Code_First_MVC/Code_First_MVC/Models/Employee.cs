@@ -10,7 +10,7 @@ namespace Code_First_MVC.Models
     {
         [Key]
         public int empid { get; set; }
-        public int empname { get; set; }
-        public int address { get; set; }
+        public string empname { get; set; }
+        public string address { get; set; }
     }
 }
