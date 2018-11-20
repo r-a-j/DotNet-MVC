@@ -1,17 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MvcCRUDDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MvcCRUDDB.dbo.Customer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="CustomerEmail" />
+      <PropertyRef Name="CustomerPhone" />
+      <PropertyRef Name="CustomerPassword" />
+    </Key>
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerPhone" Type="int" Nullable="false" />
+    <Property Name="CustomerPassword" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerAddress" Type="varchar" MaxLength="250" />
+  </EntityType>
   <EntityType Name="Employee">
     <Key>
       <PropertyRef Name="EmployeeID" />
     </Key>
     <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="50" />
-    <Property Name="Position" Type="varchar" MaxLength="50" />
-    <Property Name="Office" Type="varchar" MaxLength="50" />
-    <Property Name="Age" Type="int" />
-    <Property Name="Salary" Type="int" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmployeePosition" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmployeeNumber" Type="int" Nullable="false" />
+    <Property Name="EmployeeAddress" Type="varchar" MaxLength="250" />
+    <Property Name="EmployeeEmail" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeSalary" Type="int" />
+  </EntityType>
+  <EntityType Name="Fish">
+    <Key>
+      <PropertyRef Name="FishId" />
+    </Key>
+    <Property Name="FishId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FishName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FishType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FishRate" Type="int" Nullable="false" />
+    <Property Name="FishQuantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FishSeed">
+    <Key>
+      <PropertyRef Name="FishSeedId" />
+    </Key>
+    <Property Name="FishSeedId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FishSeedName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FishSeedType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FishSeedRate" Type="int" Nullable="false" />
+    <Property Name="FishSeedQuantity" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MvcCRUDDB.dbo.Order' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="OrderDate" />
+      <PropertyRef Name="OrderDestination" />
+      <PropertyRef Name="OrderName" />
+      <PropertyRef Name="OrderQuantity" />
+      <PropertyRef Name="OrderPrice" />
+      <PropertyRef Name="OrderBillNumber" />
+    </Key>
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="OrderDate" Type="date" Nullable="false" />
+    <Property Name="OrderDestination" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="OrderName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderQuantity" Type="int" Nullable="false" />
+    <Property Name="OrderPrice" Type="int" Nullable="false" />
+    <Property Name="OrderBillNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityContainer Name="MvcCRUDDBModelStoreContainer">
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fish" EntityType="Self.Fish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FishSeed" EntityType="Self.FishSeed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Customer].[CustomerId] AS [CustomerId], 
+    [Customer].[CustomerName] AS [CustomerName], 
+    [Customer].[CustomerEmail] AS [CustomerEmail], 
+    [Customer].[CustomerPhone] AS [CustomerPhone], 
+    [Customer].[CustomerPassword] AS [CustomerPassword], 
+    [Customer].[CustomerAddress] AS [CustomerAddress]
+    FROM [dbo].[Customer] AS [Customer]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Order" EntityType="Self.Order" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Order].[OrderId] AS [OrderId], 
+    [Order].[OrderDate] AS [OrderDate], 
+    [Order].[OrderDestination] AS [OrderDestination], 
+    [Order].[OrderName] AS [OrderName], 
+    [Order].[OrderQuantity] AS [OrderQuantity], 
+    [Order].[OrderPrice] AS [OrderPrice], 
+    [Order].[OrderBillNumber] AS [OrderBillNumber]
+    FROM [dbo].[Order] AS [Order]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

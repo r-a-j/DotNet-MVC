@@ -12,14 +12,14 @@ namespace CRUD_Practice.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class Order
     {
-        public int EmployeeID { get; set; }
-        public string EmployeeName { get; set; }
-        public string EmployeePosition { get; set; }
-        public int EmployeeNumber { get; set; }
-        public string EmployeeAddress { get; set; }
-        public string EmployeeEmail { get; set; }
-        public Nullable<int> EmployeeSalary { get; set; }
+        public int OrderId { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public string OrderDestination { get; set; }
+        public string OrderName { get; set; }
+        public int OrderQuantity { get; set; }
+        public int OrderPrice { get; set; }
+        public int OrderBillNumber { get; set; }
     }
 }

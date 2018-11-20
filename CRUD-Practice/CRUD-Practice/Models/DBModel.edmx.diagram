@@ -5,7 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1fadb1c838d9448480e0b0bd19a385c1" Name="Diagram1">
-        <EntityTypeShape EntityType="MvcCRUDDBModel.Employee" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcCRUDDBModel.Employee" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MvcCRUDDBModel.Fish" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MvcCRUDDBModel.FishSeed" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MvcCRUDDBModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MvcCRUDDBModel.Customer" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MvcCRUDDBModel.Order" Width="1.5" PointX="6.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

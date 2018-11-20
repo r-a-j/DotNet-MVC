@@ -4,12 +4,71 @@
     <EntitySetMapping Name="Employee">
       <EntityTypeMapping TypeName="MvcCRUDDBModel.Employee">
         <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmployeeSalary" ColumnName="EmployeeSalary" />
+          <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
+          <ScalarProperty Name="EmployeeAddress" ColumnName="EmployeeAddress" />
+          <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+          <ScalarProperty Name="EmployeePosition" ColumnName="EmployeePosition" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
           <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Position" ColumnName="Position" />
-          <ScalarProperty Name="Office" ColumnName="Office" />
-          <ScalarProperty Name="Age" ColumnName="Age" />
-          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fish">
+      <EntityTypeMapping TypeName="MvcCRUDDBModel.Fish">
+        <MappingFragment StoreEntitySet="Fish">
+          <ScalarProperty Name="FishQuantity" ColumnName="FishQuantity" />
+          <ScalarProperty Name="FishRate" ColumnName="FishRate" />
+          <ScalarProperty Name="FishType" ColumnName="FishType" />
+          <ScalarProperty Name="FishName" ColumnName="FishName" />
+          <ScalarProperty Name="FishId" ColumnName="FishId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FishSeed">
+      <EntityTypeMapping TypeName="MvcCRUDDBModel.FishSeed">
+        <MappingFragment StoreEntitySet="FishSeed">
+          <ScalarProperty Name="FishSeedQuantity" ColumnName="FishSeedQuantity" />
+          <ScalarProperty Name="FishSeedRate" ColumnName="FishSeedRate" />
+          <ScalarProperty Name="FishSeedType" ColumnName="FishSeedType" />
+          <ScalarProperty Name="FishSeedName" ColumnName="FishSeedName" />
+          <ScalarProperty Name="FishSeedId" ColumnName="FishSeedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MvcCRUDDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer">
+      <EntityTypeMapping TypeName="MvcCRUDDBModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="MvcCRUDDBModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="OrderBillNumber" ColumnName="OrderBillNumber" />
+          <ScalarProperty Name="OrderPrice" ColumnName="OrderPrice" />
+          <ScalarProperty Name="OrderQuantity" ColumnName="OrderQuantity" />
+          <ScalarProperty Name="OrderName" ColumnName="OrderName" />
+          <ScalarProperty Name="OrderDestination" ColumnName="OrderDestination" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

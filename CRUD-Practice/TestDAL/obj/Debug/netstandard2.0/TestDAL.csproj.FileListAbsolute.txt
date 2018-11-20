@@ -1,0 +1,9 @@
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\TestDAL\bin\Debug\netstandard2.0\TestDAL.deps.json
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\TestDAL\bin\Debug\netstandard2.0\TestDAL.dll
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\TestDAL\bin\Debug\netstandard2.0\TestDAL.pdb
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\TestDAL\obj\Debug\netstandard2.0\TestDAL.csprojAssemblyReference.cache
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\TestDAL\obj\Debug\netstandard2.0\TestDAL.csproj.CoreCompileInputs.cache
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\TestDAL\obj\Debug\netstandard2.0\TestDAL.AssemblyInfoInputs.cache
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\TestDAL\obj\Debug\netstandard2.0\TestDAL.AssemblyInfo.cs
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\TestDAL\obj\Debug\netstandard2.0\TestDAL.dll
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\TestDAL\obj\Debug\netstandard2.0\TestDAL.pdb

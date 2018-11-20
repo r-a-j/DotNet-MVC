@@ -1,17 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MvcCRUDDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MvcCRUDDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employee" EntityType="MvcCRUDDBModel.Employee" />
+    <EntitySet Name="Fish" EntityType="MvcCRUDDBModel.Fish" />
+    <EntitySet Name="FishSeed" EntityType="MvcCRUDDBModel.FishSeed" />
+    <EntitySet Name="sysdiagrams" EntityType="MvcCRUDDBModel.sysdiagrams" />
+    <EntitySet Name="Customer" EntityType="MvcCRUDDBModel.Customer" />
+    <EntitySet Name="Order" EntityType="MvcCRUDDBModel.Order" />
+  </EntityContainer>
   <EntityType Name="Employee">
     <Key>
       <PropertyRef Name="EmployeeID" />
     </Key>
     <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Office" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Age" Type="Int32" />
-    <Property Name="Salary" Type="Int32" />
+    <Property Name="EmployeeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeePosition" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeNumber" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeSalary" Type="Int32" />
   </EntityType>
-  <EntityContainer Name="MvcCRUDDBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Employee" EntityType="Self.Employee" />
-  </EntityContainer>
+  <EntityType Name="Fish">
+    <Key>
+      <PropertyRef Name="FishId" />
+    </Key>
+    <Property Name="FishId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FishName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FishType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FishRate" Type="Int32" Nullable="false" />
+    <Property Name="FishQuantity" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FishSeed">
+    <Key>
+      <PropertyRef Name="FishSeedId" />
+    </Key>
+    <Property Name="FishSeedId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FishSeedName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FishSeedType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FishSeedRate" Type="Int32" Nullable="false" />
+    <Property Name="FishSeedQuantity" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="CustomerEmail" />
+      <PropertyRef Name="CustomerPhone" />
+      <PropertyRef Name="CustomerPassword" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerPhone" Type="Int32" Nullable="false" />
+    <Property Name="CustomerPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="OrderDate" />
+      <PropertyRef Name="OrderDestination" />
+      <PropertyRef Name="OrderName" />
+      <PropertyRef Name="OrderQuantity" />
+      <PropertyRef Name="OrderPrice" />
+      <PropertyRef Name="OrderBillNumber" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OrderDestination" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="OrderName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderQuantity" Type="Int32" Nullable="false" />
+    <Property Name="OrderPrice" Type="Int32" Nullable="false" />
+    <Property Name="OrderBillNumber" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

@@ -17,18 +17,19 @@ namespace CRUD_Practice.Controllers
         [HttpPost]
         public ActionResult Index(EmployeeViewModel model)
         {
-            using (var db=new MvcCRUDDBEntities())
+            using (var db = new MvcCRUDDBEntities())
             {
                 Employee data = new Employee();
-                data.Age = model.Age;
-                data.Name = model.Name;
-                data.Salary = model.Salary;
-                data.Position = model.Position;
-                data.Office = model.Office;
+                data.EmployeeName = model.EmployeeName;
+                data.EmployeePosition = model.EmployeePosition;
+                data.EmployeeNumber = model.EmployeeNumber;
+                data.EmployeeSalary = model.EmployeeSalary;
+                data.EmployeeAddress = model.EmployeeAddress;
+                data.EmployeeEmail = model.EmployeeEmail;
                 db.Employee.Add(data);
                 db.SaveChanges();
             }
-                return View();
+            return View();
         }
 
         [HttpPost]
@@ -37,11 +38,12 @@ namespace CRUD_Practice.Controllers
             using (var db = new MvcCRUDDBEntities())
             {
                 Employee data = new Employee();
-                data.Age = model.Age;
-                data.Name = model.Name;
-                data.Salary = model.Salary;
-                data.Position = model.Position;
-                data.Office = model.Office;
+                data.EmployeeName = model.EmployeeName;
+                data.EmployeePosition = model.EmployeePosition;
+                data.EmployeeNumber = model.EmployeeNumber;
+                data.EmployeeSalary = model.EmployeeSalary;
+                data.EmployeeAddress = model.EmployeeAddress;
+                data.EmployeeEmail = model.EmployeeEmail;
                 db.Employee.Add(data);
                 db.SaveChanges();
             }

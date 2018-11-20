@@ -8,10 +8,13 @@ namespace CRUD_Practice.Models
     public class EmployeeViewModel
     {
         public int EmployeeID { get; set; }
-        public string Name { get; set; }
-        public string Position { get; set; }
-        public string Office { get; set; }
-        public Nullable<int> Age { get; set; }
-        public Nullable<int> Salary { get; set; }
+        public string EmployeeName { get; set; }
+        public string EmployeePosition { get; set; }
+        public int EmployeeNumber { get; set; }
+        public string EmployeeAddress { get; set; }
+        public string EmployeeEmail { get; set; }
+        public Nullable<int> EmployeeSalary { get; set; }
     }
+
+
 }

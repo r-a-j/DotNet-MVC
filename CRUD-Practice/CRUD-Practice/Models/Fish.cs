@@ -12,14 +12,12 @@ namespace CRUD_Practice.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class Fish
     {
-        public int EmployeeID { get; set; }
-        public string EmployeeName { get; set; }
-        public string EmployeePosition { get; set; }
-        public int EmployeeNumber { get; set; }
-        public string EmployeeAddress { get; set; }
-        public string EmployeeEmail { get; set; }
-        public Nullable<int> EmployeeSalary { get; set; }
+        public int FishId { get; set; }
+        public string FishName { get; set; }
+        public string FishType { get; set; }
+        public int FishRate { get; set; }
+        public int FishQuantity { get; set; }
     }
 }

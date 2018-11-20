@@ -12,14 +12,12 @@ namespace CRUD_Practice.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class sysdiagrams
     {
-        public int EmployeeID { get; set; }
-        public string EmployeeName { get; set; }
-        public string EmployeePosition { get; set; }
-        public int EmployeeNumber { get; set; }
-        public string EmployeeAddress { get; set; }
-        public string EmployeeEmail { get; set; }
-        public Nullable<int> EmployeeSalary { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

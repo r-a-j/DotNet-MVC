@@ -26,5 +26,10 @@ namespace CRUD_Practice.Models
         }
     
         public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<Fish> Fish { get; set; }
+        public virtual DbSet<FishSeed> FishSeed { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Customer> Customer { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
     }
 }
