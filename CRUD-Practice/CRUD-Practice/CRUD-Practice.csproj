@@ -204,7 +204,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\DBModel.Context.tt">
@@ -240,6 +239,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Style\css\bootstrap-grid.css" />
+    <Content Include="Style\css\bootstrap-grid.min.css" />
+    <Content Include="Style\css\bootstrap-reboot.css" />
+    <Content Include="Style\css\bootstrap-reboot.min.css" />
+    <Content Include="Style\css\bootstrap.css" />
+    <Content Include="Style\css\bootstrap.min.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -261,15 +266,18 @@
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\FishSeed\Index.cshtml" />
     <Content Include="Views\Fish\Index.cshtml" />
+    <Content Include="Style\css\.DS_Store" />
+    <Content Include="Style\css\bootstrap-grid.css.map" />
+    <Content Include="Style\css\bootstrap-grid.min.css.map" />
+    <Content Include="Style\css\bootstrap-reboot.css.map" />
+    <Content Include="Style\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Style\css\bootstrap.css.map" />
+    <Content Include="Style\css\bootstrap.min.css.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />

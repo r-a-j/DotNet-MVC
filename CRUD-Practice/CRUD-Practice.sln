@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD-Practice", "CRUD-Practice\CRUD-Practice.csproj", "{9DE5E2BF-5DE9-446F-8725-BFDF1FE93C9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDAL", "TestDAL\TestDAL.csproj", "{E2375229-5EB7-48A6-890B-F54107D2CA18}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{9DE5E2BF-5DE9-446F-8725-BFDF1FE93C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DE5E2BF-5DE9-446F-8725-BFDF1FE93C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DE5E2BF-5DE9-446F-8725-BFDF1FE93C9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E2375229-5EB7-48A6-890B-F54107D2CA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2375229-5EB7-48A6-890B-F54107D2CA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2375229-5EB7-48A6-890B-F54107D2CA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2375229-5EB7-48A6-890B-F54107D2CA18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

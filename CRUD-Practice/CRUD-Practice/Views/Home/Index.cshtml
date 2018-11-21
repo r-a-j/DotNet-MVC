@@ -1,39 +1,26 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+	ViewBag.Title = "Bootstrap Example";
 }
 
-<header>
-    <h2 style="font-size:50px;">Buy Fresh Fish</h2>
-</header>
+@*@using (Html.BeginForm("AddData", "Home", FormMethod.Post))
+	{
+		<h3>Name : </h3><input type="text" name="EmployeeName" value="" class="form-control" /><br /><br />
+		<h3>Position : </h3><input type="text" name="EmployeePosition" value="" class="form-control" /><br /><br />
+		<h3>Phone Number : </h3><input type="text" name="EmployeeNumber" value="" class="form-control" /><br /><br />
+		<h3>Email : </h3><input type="text" name="EmployeeEmail" value="" class="form-control" /><br /><br />
+		<h3>Salary : </h3><input type="text" name="EmployeeSalary" value="" class="form-control" /><br /><br />
+		<h3>Address : </h3><input type="text" name="EmployeeAddress" value="" class="form-control" /><br /><br />
+		<input type="submit" name="submit" value="Add Record" class="btn btn-success" />
+	}*@
 
-<section>
-    <nav>
-        <ul>
-            <li><a href="~/Home/index">Home</a></li>
-            <li><a href="~/Fish/index">Buy Fish</a></li>
-            <li><a href="~/FishSeed/index">Buy Fish Seed</a></li>
-            <li><a href="~/Profile/index">My Profile</a></li>
-            <li><a href="~/ContactUs/index">Contact Us</a></li>
-            <li><a href="~/AboutUs/index">About Us</a></li>
-        </ul>
-    </nav>
+<link href="~/Style/css/bootstrap.css" rel="stylesheet" />
 
-    <article>
-        @using (Html.BeginForm("AddData", "Home", FormMethod.Post))
-        {
-            <h3>Name : </h3><input type="text" name="EmployeeName" value="" class="form-control" /><br /><br />
-            <h3>Position : </h3><input type="text" name="EmployeePosition" value="" class="form-control" /><br /><br />
-            <h3>Phone Number : </h3><input type="text" name="EmployeeNumber" value="" class="form-control" /><br /><br />
-            <h3>Email : </h3><input type="text" name="EmployeeEmail" value="" class="form-control" /><br /><br />
-            <h3>Salary : </h3><input type="text" name="EmployeeSalary" value="" class="form-control" /><br /><br />
-            <h3>Address : </h3><input type="text" name="EmployeeAddress" value="" class="form-control" /><br /><br />
-            <input type="submit" name="submit" value="Add Record" class="btn btn-success" />
-        }
-    </article>
-</section>
 
-<button ></button>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 
