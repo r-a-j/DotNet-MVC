@@ -311,7 +311,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\js\custom.js" />
     <Content Include="Scripts\js\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Style\css\bootstrap-grid.css" />
@@ -320,7 +319,6 @@
     <Content Include="Style\css\bootstrap-reboot.min.css" />
     <Content Include="Style\css\bootstrap.css" />
     <Content Include="Style\css\bootstrap.min.css" />
-    <Content Include="Style\css\custom.css" />
     <Content Include="Style\css\main.css" />
     <Content Include="Style\css\util.css" />
     <Content Include="vendor\animate\animate.css" />
