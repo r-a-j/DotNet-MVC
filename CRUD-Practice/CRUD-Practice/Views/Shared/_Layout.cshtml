@@ -26,34 +26,36 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand font-weight-bold font-italic h-100 d-inline-block" href="#"><h1>Fresh Fish</h1></a>
+		<h1 class="h-100 d-inline-block font-weight-bold font-italic" text-shadow: 2px 2px 4px #000000;>Fresh Fish</h1>
 
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li class="nav-item p-2 h4 font-weight-bold border-right">				
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0 center-block">
+				<li class="nav-item p-2 h4 font-weight-bold border-right border-dark">
 					@Html.ActionLink("Home", "Index", "Home")
 				</li>
-				<li class="nav-item p-2 h4 font-weight-bold border-right">					
+				<li class="nav-item p-2 h4 font-weight-bold border-right border-dark">
 					@Html.ActionLink("Buy Fish", "Index", "Fish")
 				</li>
-				<li class="nav-item p-2 h4 font-weight-bold border-right">					
+				<li class="nav-item p-2 h4 font-weight-bold border-right border-dark">
 					@Html.ActionLink("Fish Seeds", "Index", "FishSeed")
 				</li>
-				<li class="nav-item p-2 h4 font-weight-bold border-right">					
+				<li class="nav-item p-2 h4 font-weight-bold border-right border-dark">
 					@Html.ActionLink("Locate Van", "Index", "LocateVan")
-				</li>		
-				<li class="nav-item p-2 h4 font-weight-bold border-right">					
+				</li>
+				<li class="nav-item p-2 h4 font-weight-bold border-right border-dark">
 					@Html.ActionLink("About Us", "Index", "AboutUs")
 				</li>
-				<li class="nav-item p-2 h4 font-weight-bold">					
+				<li class="nav-item p-2 h4 font-weight-bold">
 					@Html.ActionLink("Contact Us", "Index", "ContactUs")
 				</li>
 			</ul>
+			<a href="#"><i class="nav-item p-2 h4 fa fa-fw fa-shopping-cart font-weight-bold align-content-sm-end" style="margin-right:15px;"></i></a>
+			<a href="#"><i class="nav-item p-2 h4 fa fa-fw fa-user font-weight-bold align-content-sm-end" style="margin-right:15px;"></i></a>
+
 			<form class="form-inline my-2 my-lg-0">
-				<input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
-				<div class="input-group-append">
-					<button class="btn btn-success" type="button">Search</button>
-				</div>
+				<input type="text" class="form-control" placeholder="Search">
+				<button class="btn-btn" type="button"><a href="#"><i class="fa fa-fw fa-search"></i></a></button>
+
 			</form>
 		</div>
 	</nav> 
