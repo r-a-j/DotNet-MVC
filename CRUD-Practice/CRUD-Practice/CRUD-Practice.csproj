@@ -150,6 +150,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\CultivateFishController.cs" />
     <Compile Include="Controllers\FishController.cs" />
@@ -215,6 +216,7 @@
     <Content Include="Assets\Fish\a9.png" />
     <Content Include="Assets\images\icons\favicon.ico" />
     <Content Include="Assets\images\img-01.png" />
+    <Content Include="Assets\images\img-02.png" />
     <Content Include="Assets\images\marker.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -312,6 +314,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\js\main.js" />
+    <Content Include="Scripts\js\main2.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Style\css\bootstrap-grid.css" />
     <Content Include="Style\css\bootstrap-grid.min.css" />
@@ -320,7 +323,9 @@
     <Content Include="Style\css\bootstrap.css" />
     <Content Include="Style\css\bootstrap.min.css" />
     <Content Include="Style\css\main.css" />
+    <Content Include="Style\css\main2.css" />
     <Content Include="Style\css\util.css" />
+    <Content Include="Style\css\util2.css" />
     <Content Include="vendor\animate\animate.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
@@ -378,6 +383,7 @@
     <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
