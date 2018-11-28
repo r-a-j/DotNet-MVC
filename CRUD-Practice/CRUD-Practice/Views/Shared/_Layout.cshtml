@@ -3,43 +3,64 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>@ViewBag.Title -</title>
+	<title>@ViewBag.Title</title>
 
 	@Styles.Render("~/Content/css")
 	@Scripts.Render("~/bundles/modernizr")
 
 	<link href="~/Style/css/bootstrap.css" rel="stylesheet" />
+	<link rel="icon" type="image/png" href="~/Assets/images/icons/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="~/Style/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/Style/css/main.css">
 
 </head>
 
 <body>
 
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Fresh Fish</a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Fish</a></li>
-				<li><a href="#">Fish Seed</a></li>
-			</ul>
-			<form class="navbar-form navbar-left" action="/action_page.php">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Search" name="search">
-				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
-			</form>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			</ul>
-		</div>
-	</nav>
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-warning">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<h1 class="h-100 d-inline-block font-weight-bold font-italic" text-shadow: 2px 2px 4px #000000;>Fresh Fish</h1>
 
-	<div class="container body-content">
-		@RenderBody()
-	</div>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0 center-block">
+				<li class="nav-item p-2 h4 font-weight-bold border-right border-dark">
+					@Html.ActionLink("Home", "Index", "Home")
+				</li>
+				<li class="nav-item p-2 h4 font-weight-bold border-right border-dark">
+					@Html.ActionLink("Buy Fish", "Index", "Fish")
+				</li>
+				<li class="nav-item p-2 h4 font-weight-bold border-right border-dark">
+					@Html.ActionLink("Fish Seeds", "Index", "FishSeed")
+				</li>
+				<li class="nav-item p-2 h4 font-weight-bold border-right border-dark">
+					@Html.ActionLink("Locate Van", "Index", "LocateVan")
+				</li>
+				<li class="nav-item p-2 h4 font-weight-bold border-right border-dark">
+					@Html.ActionLink("About Us", "Index", "AboutUs")
+				</li>
+				<li class="nav-item p-2 h4 font-weight-bold">
+					@Html.ActionLink("Contact Us", "Index", "ContactUs")
+				</li>
+			</ul>
+			<a href="#"><i class="nav-item p-2 h4 fa fa-fw fa-shopping-cart font-weight-bold align-content-sm-end" style="margin-right:15px;"></i></a>
+			<a href="#"><i class="nav-item p-2 h4 fa fa-fw fa-user font-weight-bold align-content-sm-end" style="margin-right:15px;"></i></a>
+
+			<form class="form-inline my-2 my-lg-0">
+				<input type="text" class="form-control" placeholder="Search">
+				<button class="btn-btn" type="button"><a href="#"><i class="fa fa-fw fa-search"></i></a></button>
+
+			</form>
+		</div>
+	</nav> 
+
+	@RenderBody()
 
 	@Scripts.Render("~/bundles/jquery")
 	@Scripts.Render("~/bundles/bootstrap")
