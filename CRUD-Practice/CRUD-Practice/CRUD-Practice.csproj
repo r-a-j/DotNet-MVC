@@ -150,6 +150,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\CultivateFishController.cs" />
     <Compile Include="Controllers\FishController.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Controllers\LocateVanController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
+    <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,7 +185,6 @@
     <Compile Include="Models\Employee.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Models\Fish.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -215,7 +216,10 @@
     <Content Include="Assets\Fish\a9.png" />
     <Content Include="Assets\images\icons\favicon.ico" />
     <Content Include="Assets\images\img-01.png" />
+    <Content Include="Assets\images\img-02.png" />
     <Content Include="Assets\images\marker.png" />
+    <Content Include="Assets\images\signin-image.jpg" />
+    <Content Include="Assets\images\signup-image.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -225,7 +229,26 @@
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="fonts\material-icon\css\material-design-iconic-font.css" />
+    <Content Include="fonts\material-icon\css\material-design-iconic-font.min.css" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="fonts\montserrat\OFL.txt" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\DBModel.Context.tt">
@@ -301,6 +324,74 @@
     <Content Include="fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
     <Content Include="fonts\montserrat\Montserrat-Thin.ttf" />
     <Content Include="fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -312,6 +403,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\js\main.js" />
+    <Content Include="Scripts\js\main2.js" />
+    <Content Include="Scripts\js\main3.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Style\css\bootstrap-grid.css" />
     <Content Include="Style\css\bootstrap-grid.min.css" />
@@ -320,7 +413,10 @@
     <Content Include="Style\css\bootstrap.css" />
     <Content Include="Style\css\bootstrap.min.css" />
     <Content Include="Style\css\main.css" />
+    <Content Include="Style\css\main2.css" />
+    <Content Include="Style\css\style3.css" />
     <Content Include="Style\css\util.css" />
+    <Content Include="Style\css\util2.css" />
     <Content Include="vendor\animate\animate.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
@@ -336,6 +432,8 @@
     <Content Include="vendor\css-hamburgers\hamburgers.css" />
     <Content Include="vendor\css-hamburgers\hamburgers.min.css" />
     <Content Include="vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="vendor\jquery\jquery-ui.min.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
     <Content Include="vendor\select2\select2.css" />
     <Content Include="vendor\select2\select2.js" />
     <Content Include="vendor\select2\select2.min.css" />
@@ -378,6 +476,16 @@
     <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\SignUp\Index.cshtml" />
+    <Content Include="Style\scss\common\extend.scss" />
+    <Content Include="Style\scss\common\fonts.scss" />
+    <Content Include="Style\scss\common\global.scss" />
+    <Content Include="Style\scss\common\minxi.scss" />
+    <Content Include="Style\scss\common\variables.scss" />
+    <Content Include="Style\scss\layouts\main.scss" />
+    <Content Include="Style\scss\layouts\responsive.scss" />
+    <Content Include="Style\scss\style.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

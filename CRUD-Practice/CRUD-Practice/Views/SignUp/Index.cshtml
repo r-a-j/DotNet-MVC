@@ -1,0 +1,95 @@
+﻿
+@{
+	ViewBag.Title = "Sign Up";
+}
+
+<!-- Font Icon -->
+<link rel="stylesheet" href="~/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<style type="text/css">
+	A:link {
+		COLOR: black;
+		TEXT-DECORATION: none;
+		font-weight: normal
+	}
+
+	A:visited {
+		COLOR: black;
+		TEXT-DECORATION: none;
+		font-weight: normal
+	}
+
+	A:active {
+		COLOR: black;
+		TEXT-DECORATION: none
+	}
+
+	A:hover {
+		COLOR: red;
+		TEXT-DECORATION: none;
+		font-weight: none
+	}
+</style>
+
+<!-- Main css -->
+<link rel="stylesheet" href="~/Style/css/style3.css">
+</br>
+<!-- Sign up form -->
+<section class="signup">
+	<div class="container">
+		<div class="signup-content">
+			<div class="signup-form">
+				<a href="@Url.Action("Index", "SignUp")" class="h-100 form-title" style="color:black; font-weight:bolder; font-family:'Comic Sans MS'; text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+						0px -5px 35px rgba(255,255,255,0.3);"><h1>Sign Up</h1></a>
+				</br>
+				@*<form method="POST" class="register-form" id="register-form">*@
+				@using (Html.BeginForm("Index", "SignUp", FormMethod.Post, new { @class = "register-form" }))
+				{
+					<div class="form-group">
+						<label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+						<input type="text" name="name" id="name" placeholder="Your Name" />
+					</div>
+					<div class="form-group">
+						<label for="email"><i class="zmdi zmdi-email"></i></label>
+						<input type="email" name="email" id="email" placeholder="Your Email" />
+					</div>
+					<div class="form-group">
+						<label for="name"><i class="zmdi zmdi-home"></i></label>
+						<input type="text" name="address" id="address" placeholder="Address" />
+					</div>
+					<div class="form-group">
+						<label for="phone"><i class="zmdi zmdi-phone"></i></label>
+						<input type="number" name="phone" id="phone" placeholder="Phone +91" />
+					</div>
+					<div class="form-group">
+						<label for="pass"><i class="zmdi zmdi-lock"></i></label>
+						<input type="password" name="pass" id="pass" placeholder="Password" />
+					</div>
+					<div class="form-group">
+						<label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+						<input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" />
+					</div>
+					<div class="form-group">
+						<input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required />
+						<label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+					</div>
+					<div class="form-group form-button">
+						<input style="color:black; font-size:15px; font-weight:bolder; font-family:'Comic Sans MS';" type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+					</div>
+				 }
+
+				@*</form>*@
+			</div>
+			<div class="signup-image">
+				<figure><img src="~/Assets/images/signup-image.jpg" alt="sing up image"></figure>
+				<a href="@Url.Action("Index", "Profile")" style="font-weight:bolder; font-family:'Comic Sans MS'; font-size:15px;" class="signup-image-link">I am already member</a>
+			</div>
+		</div>
+		</div>
+	</section>
+
+
+	<!-- JS -->
+	<script src="~/vendor/jquery/jquery.min.js"></script>
+	<script src="~/Scripts/js/main3.js"></script>
+

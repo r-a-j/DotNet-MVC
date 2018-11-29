@@ -1,7 +1,82 @@
 ﻿
 @{
-    ViewBag.Title = "Profile";
+	ViewBag.Title = "Profile";
 }
 
-<h2>Index</h2>
+<!-- Font Icon -->
+<link rel="stylesheet" href="~/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="~/Style/css/style3.css">
+<style type="text/css">
+	A:link {
+		COLOR: black;
+		TEXT-DECORATION: none;
+		font-weight: normal
+	}
+
+	A:visited {
+		COLOR: black;
+		TEXT-DECORATION: none;
+		font-weight: normal
+	}
+
+	A:active {
+		COLOR: black;
+		TEXT-DECORATION: none
+	}
+
+	A:hover {
+		COLOR: red;
+		TEXT-DECORATION: none;
+		font-weight: none
+	}
+</style>
+</br>
+<!-- Sing in  Form -->
+<section class="sign-in">
+	<div class="container">
+		<div class="signin-content">
+			<div class="signin-image">
+				<figure><img src="~/Assets/images/signin-image.jpg" alt="sing up image"></figure>
+				<a href="@Url.Action("Index", "SignUp")" class="signup-image-link A" style="font-weight:bolder; font-family:'Comic Sans MS'; font-size:15px;">Not registered ? Create an account</a>
+			</div>
+
+			<div class="signin-form">
+				<a href="@Url.Action("Index", "Profile")" class="h-100 form-title" style="color:black; font-weight:bolder; font-family:'Comic Sans MS'; text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+						0px -5px 35px rgba(255,255,255,0.3);"><h1>Sign In</h1></a>
+				</br>
+				<form method="POST" class="register-form" id="login-form">
+					<div class="form-group">
+						<label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+						<input type="text" name="your_name" id="your_name" placeholder="Your Name" />
+					</div>
+					<div class="form-group">
+						<label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+						<input type="password" name="your_pass" id="your_pass" placeholder="Password" />
+					</div>
+					<div class="form-group">
+						<input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+						<label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+					</div>
+					<div class="form-group form-button">
+						<input style="color:black; font-size:15px; font-weight:bolder; font-family:'Comic Sans MS';" type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+					</div>
+				</form>
+				<div class="social-login">
+					<span class="social-label">Or login with</span>
+					<ul class="socials">
+						<li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+						<li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+						<li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- JS -->
+<script src="~/vendor/jquery/jquery.min.js"></script>
+<script src="~/Scripts/js/main3.js"></script>
 
