@@ -220,6 +220,10 @@
     <Content Include="Assets\images\marker.png" />
     <Content Include="Assets\images\signin-image.jpg" />
     <Content Include="Assets\images\signup-image.jpg" />
+    <Content Include="Assets\Slider\slide1.png" />
+    <Content Include="Assets\Slider\slide2.png" />
+    <Content Include="Assets\Slider\slide3.png" />
+    <Content Include="Assets\Slider\slide4.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
