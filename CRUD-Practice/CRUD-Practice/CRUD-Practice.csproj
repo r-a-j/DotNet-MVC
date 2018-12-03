@@ -214,12 +214,17 @@
     <Content Include="Assets\Fish\a7.png" />
     <Content Include="Assets\Fish\a8.png" />
     <Content Include="Assets\Fish\a9.png" />
+    <Content Include="Assets\HomeCards\homecard.png" />
     <Content Include="Assets\images\icons\favicon.ico" />
     <Content Include="Assets\images\img-01.png" />
     <Content Include="Assets\images\img-02.png" />
     <Content Include="Assets\images\marker.png" />
     <Content Include="Assets\images\signin-image.jpg" />
     <Content Include="Assets\images\signup-image.jpg" />
+    <Content Include="Assets\Offers\offer1.png" />
+    <Content Include="Assets\Offers\offer2.png" />
+    <Content Include="Assets\Offers\offer3.png" />
+    <Content Include="Assets\Offers\offer4.png" />
     <Content Include="Assets\Slider\slide1.png" />
     <Content Include="Assets\Slider\slide2.png" />
     <Content Include="Assets\Slider\slide3.png" />
