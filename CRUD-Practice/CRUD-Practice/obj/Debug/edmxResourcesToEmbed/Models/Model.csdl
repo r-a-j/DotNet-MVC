@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcCRUDDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerPhone" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CustomerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Fish">
+    <Key>
+      <PropertyRef Name="FishId" />
+    </Key>
+    <Property Name="FishId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FishName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FishType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FishRate" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FishQuantity" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FishSeed">
+    <Key>
+      <PropertyRef Name="FishSeedId" />
+    </Key>
+    <Property Name="FishSeedId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FishSeedName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FishSeedType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FishSeedRate" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FishSeedQuantity" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OrderDestination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderQuantity" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="OrderPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderBillNumber" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="OrderDeliveryDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="MvcCRUDDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Fish" EntityType="Self.Fish" />
+    <EntitySet Name="FishSeeds" EntityType="Self.FishSeed" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+  </EntityContainer>
+</Schema>

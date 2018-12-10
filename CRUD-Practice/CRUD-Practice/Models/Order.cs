@@ -14,12 +14,13 @@ namespace CRUD_Practice.Models
     
     public partial class Order
     {
-        public int OrderId { get; set; }
+        public decimal OrderId { get; set; }
         public System.DateTime OrderDate { get; set; }
         public string OrderDestination { get; set; }
         public string OrderName { get; set; }
-        public int OrderQuantity { get; set; }
-        public int OrderPrice { get; set; }
-        public int OrderBillNumber { get; set; }
+        public decimal OrderQuantity { get; set; }
+        public string OrderPrice { get; set; }
+        public decimal OrderBillNumber { get; set; }
+        public System.DateTime OrderDeliveryDate { get; set; }
     }
 }

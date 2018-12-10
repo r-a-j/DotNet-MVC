@@ -14,10 +14,10 @@ namespace CRUD_Practice.Models
     
     public partial class Fish
     {
-        public int FishId { get; set; }
+        public decimal FishId { get; set; }
         public string FishName { get; set; }
         public string FishType { get; set; }
-        public int FishRate { get; set; }
-        public int FishQuantity { get; set; }
+        public decimal FishRate { get; set; }
+        public decimal FishQuantity { get; set; }
     }
 }

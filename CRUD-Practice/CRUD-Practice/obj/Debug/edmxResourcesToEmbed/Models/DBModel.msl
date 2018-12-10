@@ -1,19 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="MvcCRUDDBModelStoreContainer" CdmEntityContainer="MvcCRUDDBEntities">
-    <EntitySetMapping Name="Employee">
-      <EntityTypeMapping TypeName="MvcCRUDDBModel.Employee">
-        <MappingFragment StoreEntitySet="Employee">
-          <ScalarProperty Name="EmployeeSalary" ColumnName="EmployeeSalary" />
-          <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
-          <ScalarProperty Name="EmployeeAddress" ColumnName="EmployeeAddress" />
-          <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
-          <ScalarProperty Name="EmployeePosition" ColumnName="EmployeePosition" />
-          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Fish">
       <EntityTypeMapping TypeName="MvcCRUDDBModel.Fish">
         <MappingFragment StoreEntitySet="Fish">

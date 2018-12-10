@@ -4,29 +4,14 @@
 warning 6002: The table/view 'MvcCRUDDB.dbo.Customer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Customer">
     <Key>
-      <PropertyRef Name="CustomerName" />
-      <PropertyRef Name="CustomerEmail" />
-      <PropertyRef Name="CustomerPhone" />
-      <PropertyRef Name="CustomerPassword" />
+      <PropertyRef Name="CustomerId" />
     </Key>
-    <Property Name="CustomerId" Type="int" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
     <Property Name="CustomerName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="CustomerEmail" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="CustomerPhone" Type="int" Nullable="false" />
     <Property Name="CustomerPassword" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="CustomerAddress" Type="varchar" MaxLength="250" />
-  </EntityType>
-  <EntityType Name="Employee">
-    <Key>
-      <PropertyRef Name="EmployeeID" />
-    </Key>
-    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="EmployeeName" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="EmployeePosition" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="EmployeeNumber" Type="int" Nullable="false" />
-    <Property Name="EmployeeAddress" Type="varchar" MaxLength="250" />
-    <Property Name="EmployeeEmail" Type="varchar" MaxLength="50" />
-    <Property Name="EmployeeSalary" Type="int" />
   </EntityType>
   <EntityType Name="Fish">
     <Key>
@@ -53,12 +38,6 @@ warning 6002: The table/view 'MvcCRUDDB.dbo.Order' does not have a primary key d
   <EntityType Name="Order">
     <Key>
       <PropertyRef Name="OrderId" />
-      <PropertyRef Name="OrderDate" />
-      <PropertyRef Name="OrderDestination" />
-      <PropertyRef Name="OrderName" />
-      <PropertyRef Name="OrderQuantity" />
-      <PropertyRef Name="OrderPrice" />
-      <PropertyRef Name="OrderBillNumber" />
     </Key>
     <Property Name="OrderId" Type="int" Nullable="false" />
     <Property Name="OrderDate" Type="date" Nullable="false" />
@@ -79,7 +58,6 @@ warning 6002: The table/view 'MvcCRUDDB.dbo.Order' does not have a primary key d
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityContainer Name="MvcCRUDDBModelStoreContainer">
-    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Fish" EntityType="Self.Fish" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FishSeed" EntityType="Self.FishSeed" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />

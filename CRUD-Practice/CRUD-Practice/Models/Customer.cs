@@ -14,11 +14,12 @@ namespace CRUD_Practice.Models
     
     public partial class Customer
     {
-        public Nullable<int> CustomerId { get; set; }
+        public decimal CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string CustomerEmail { get; set; }
-        public int CustomerPhone { get; set; }
+        public decimal CustomerPhone { get; set; }
         public string CustomerPassword { get; set; }
-        public string CustomerAddress { get; set; }
+		public string CustomerRePassword { get; set; }
+		public string CustomerAddress { get; set; }
     }
 }
