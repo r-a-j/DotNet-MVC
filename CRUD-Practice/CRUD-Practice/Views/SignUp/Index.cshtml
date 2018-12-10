@@ -46,6 +46,7 @@
 				</br>
 				@using (Html.BeginForm("Index", "SignUp", FormMethod.Post, new { @class = "register-form" }))
 				{
+
 				<div class="form-group">
 					@Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @class = "form-group", placeholder = "Name" } }) @*@Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })*@
 

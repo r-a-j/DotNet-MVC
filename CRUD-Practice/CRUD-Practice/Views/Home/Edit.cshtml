@@ -1,0 +1,47 @@
+﻿@model CRUD_Practice.Models.Customer
+
+@{
+	ViewBag.Title = "Edit";
+}
+
+<br /><br />
+<h1 style="text-align:center;  color:black; font-weight:bolder; font-family:'Comic Sans MS'; text-shadow: 2px 8px 6px rgba(0,0,0,0.2),0px -5px 35px rgba(255,255,255,0.3);">
+	Edit Customer Details
+</h1>
+
+<br /><br />
+	
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post, new { @class = "register-form" }))
+{
+	@Html.HiddenFor(customerData => customerData.CustomerId)
+
+	<section style="padding-left:50px">
+
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="">Name</span>
+			</div>
+			@Html.EditorFor(customerData => customerData.CustomerName, new { htmlAttributes = new { @class = "form-control shadow-lg" } })
+		</div>
+		<br />
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="">E-mail</span>
+			</div>
+			@Html.EditorFor(customerData => customerData.CustomerEmail, new { htmlAttributes = new { @class = "form-control shadow-lg" } })
+		</div>
+		<br />
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="">Address</span>
+			</div>
+			@Html.EditorFor(customerData => customerData.CustomerAddress, new { htmlAttributes = new { @class = "form-control shadow-lg" } })
+		</div>
+		<br />
+		<input class="btn btn-success shadow-sm" type="submit" value="Update">
+		@*<button type="button" class="btn btn-success shadow-sm">Update</button>*@
+
+
+	</section>
+
+}

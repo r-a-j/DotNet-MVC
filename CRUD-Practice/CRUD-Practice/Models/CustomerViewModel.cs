@@ -32,10 +32,15 @@ namespace CRUD_Practice.Models
 		{
 			using (var db=new MvcCRUDDBEntities1())
 			{
+				// converting all the data into list datatype
 				var customerData = db.Customers.ToList();
+
+				// for storing all data in list
 				var list = new List<CustomerViewModel>();
+
 				if (customerData.Count > 0)
 				{
+					// storing each member data seperatly in lst object
 					foreach (var item in customerData)
 					{
 						var lst = new CustomerViewModel();
