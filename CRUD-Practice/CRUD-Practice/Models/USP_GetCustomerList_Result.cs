@@ -10,9 +10,8 @@
 namespace CRUD_Practice.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class USP_GetCustomerList_Result
     {
         public decimal CustomerId { get; set; }
         public string CustomerName { get; set; }

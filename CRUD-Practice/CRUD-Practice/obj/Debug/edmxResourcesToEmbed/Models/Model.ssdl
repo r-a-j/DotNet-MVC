@@ -9,7 +9,7 @@
     <Property Name="CustomerEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="CustomerPhone" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="CustomerPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="CustomerAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Fish">
     <Key>
@@ -54,6 +54,7 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <Function Name="USP_GetCustomerList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="MvcCRUDDBModelStoreContainer">
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Fish" EntityType="Self.Fish" Schema="dbo" store:Type="Tables" />

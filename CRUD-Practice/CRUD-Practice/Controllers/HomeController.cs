@@ -20,20 +20,36 @@ namespace CRUD_Practice.Controllers
 
 		public ViewResult Edit(decimal id)
 		{
-			using (var db=new MvcCRUDDBEntities1())
+			using (var db = new MvcCRUDDBEntities1())
 			{
 				var customerData = db.Customers.Where(a => a.CustomerId == id).FirstOrDefault();
 				// if id is the primary key in the database them directly write id
 				// var customerData = db.Customers.Find(id);
-				return View(customerData);
-			}			
+
+				CustomerViewModel model = new CustomerViewModel();
+				model.CustomerId = customerData.CustomerId;
+				model.CustomerEmail = customerData.CustomerEmail;
+				model.CustomerAddress = customerData.CustomerAddress;
+				model.CustomerName = customerData.CustomerName;
+				return View(model);
+			}
 		}
 
 		[HttpPost]
 		public ActionResult Edit(CustomerViewModel model)
-		{			
+		{
 			var result = model.EditCustomer(model);
 			return RedirectToAction("Index");
+		}
+
+		public ActionResult DeleteCustomer(decimal id)
+		{
+			CustomerViewModel model = new CustomerViewModel();
+			var result = model.DeleteCustomer(id);
+			if (result == true)
+				return RedirectToAction("Index");
+			else
+				return null;
 		}
 	}
 }

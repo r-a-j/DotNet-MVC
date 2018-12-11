@@ -1,4 +1,4 @@
-﻿@model CRUD_Practice.Models.Customer
+﻿@model CRUD_Practice.Models.CustomerViewModel
 
 @{
 	ViewBag.Title = "Edit";
@@ -29,6 +29,7 @@
 				<span class="input-group-text" id="">E-mail</span>
 			</div>
 			@Html.EditorFor(customerData => customerData.CustomerEmail, new { htmlAttributes = new { @class = "form-control shadow-lg" } })
+		
 		</div>
 		<br />
 		<div class="input-group">

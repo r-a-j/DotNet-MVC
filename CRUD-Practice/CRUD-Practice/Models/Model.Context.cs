@@ -12,6 +12,8 @@ namespace CRUD_Practice.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class MvcCRUDDBEntities1 : DbContext
     {
@@ -30,5 +32,10 @@ namespace CRUD_Practice.Models
         public virtual DbSet<FishSeed> FishSeeds { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+    
+        public virtual ObjectResult<USP_GetCustomerList_Result> USP_GetCustomerList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetCustomerList_Result>("USP_GetCustomerList");
+        }
     }
 }
