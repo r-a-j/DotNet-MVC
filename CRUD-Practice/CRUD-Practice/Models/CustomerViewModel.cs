@@ -23,8 +23,12 @@ namespace CRUD_Practice.Models
 			using (var db = new MvcCRUDDBEntities1())
 			{
 				// converting all the data into list datatype
+				// getting the data from the data base 
 				//var customerData = db.Customers.ToList();
+
+				//Used stored procedure for the displaying the data 
 				var customerData = db.USP_GetCustomerList().ToList();
+
 				// for storing all data in list
 				var list = new List<CustomerViewModel>();
 
@@ -49,7 +53,7 @@ namespace CRUD_Practice.Models
 		{
 			using (var db = new MvcCRUDDBEntities1())
 			{
-				var customerData = db.Customers.Find(model.CustomerId);
+				var customerData = db.Customers.Find(model.CustomerId);				
 				customerData.CustomerName = model.CustomerName;
 				customerData.CustomerAddress = model.CustomerAddress;
 				customerData.CustomerEmail = model.CustomerEmail;

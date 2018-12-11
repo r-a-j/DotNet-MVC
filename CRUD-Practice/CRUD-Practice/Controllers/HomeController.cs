@@ -24,8 +24,12 @@ namespace CRUD_Practice.Controllers
 			{
 				var customerData = db.Customers.Where(a => a.CustomerId == id).FirstOrDefault();
 				// if id is the primary key in the database them directly write id
+
+				// This selects all the data of particular di but is slower
 				// var customerData = db.Customers.Find(id);
 
+				// Manually giving the data to view model.
+				// This is faster
 				CustomerViewModel model = new CustomerViewModel();
 				model.CustomerId = customerData.CustomerId;
 				model.CustomerEmail = customerData.CustomerEmail;
@@ -45,8 +49,10 @@ namespace CRUD_Practice.Controllers
 		public ActionResult DeleteCustomer(decimal id)
 		{
 			CustomerViewModel model = new CustomerViewModel();
-			var result = model.DeleteCustomer(id);
-			if (result == true)
+
+			// getting the bool result from the DeleteCustomer method from CustomerViewModel class
+			// checking if data is deleted or not
+			if (model.DeleteCustomer(id))
 				return RedirectToAction("Index");
 			else
 				return null;
