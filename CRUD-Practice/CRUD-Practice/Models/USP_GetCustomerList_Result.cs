@@ -16,8 +16,15 @@ namespace CRUD_Practice.Models
         public decimal CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string CustomerEmail { get; set; }
-        public decimal CustomerPhone { get; set; }
+        public Nullable<decimal> CustomerPhone { get; set; }
         public string CustomerPassword { get; set; }
         public string CustomerAddress { get; set; }
+        public Nullable<System.DateTime> AddedDateTime { get; set; }
+        public Nullable<decimal> AddedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedDateTime { get; set; }
+        public Nullable<decimal> UpdatedBy { get; set; }
+        public Nullable<decimal> DeletedBy { get; set; }
+        public Nullable<System.DateTime> DeletedDateTime { get; set; }
+        public Nullable<bool> IsDelete { get; set; }
     }
 }

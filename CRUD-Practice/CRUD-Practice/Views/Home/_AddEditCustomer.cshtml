@@ -1,0 +1,58 @@
+﻿@model CRUD_Practice.Models.CustomerViewModel
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<div class="modal fade" id="dialogAddEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="pixie-apt-close"></i></button>
+				<h4 class="modal-title" id="myModalLabel"> @(Model.CustomerId != 0 && Model.CustomerId != null ? "Edit Customer" : "Add Customer")</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							@Html.HiddenFor(model => model.CustomerId)
+							<label>First Name</label>
+							@Html.TextBoxFor(model => model.CustomerName, new { @class = "form-control", @placeholder = "Customer Name" })
+							@Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger identity clsFirstName", @style = "font-weight:bold;color:red;font-size:13px" })
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label>Email</label>
+							@Html.TextBoxFor(model => model.CustomerEmail, new { @class = "form-control", @placeholder = "Email" })
+							@Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger identity clsEmail", @style = "font-weight:bold;color:red;font-size:13px" })
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label>Address</label>
+							@Html.TextBoxFor(model => model.CustomerAddress, new { @class = "form-control", @placeholder = "MobileNumber" })
+							@Html.ValidationMessageFor(model => model.CustomerAddress, "", new { @class = "text-danger identity clsMobileNumber", @style = "font-weight:bold;color:red;font-size:13px" })
+						</div>
+					</div>
+				</div>
+
+				
+				<div class="row">
+					<div class="modal-btn">
+						<br />
+						<button class="btn common-btn" id="btnSubmit" type="submit" onclick="AddCustomer()">Submit</button>
+						<button class="btn common-btn cacel" data-dismiss="modal" type="button">cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

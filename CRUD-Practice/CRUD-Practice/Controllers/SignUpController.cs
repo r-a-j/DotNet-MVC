@@ -22,14 +22,14 @@ namespace CRUD_Practice.Controllers
 			{
 				using (var db = new MvcCRUDDBEntities1())
 				{
-					Customer data = new Customer();
+					tblCustomer data = new tblCustomer();
 					data.CustomerName = model.CustomerName;
 					data.CustomerEmail = model.CustomerEmail;
 					data.CustomerPhone = model.CustomerPhone;
 					data.CustomerPassword = model.CustomerPassword;
 					var passwordCheck = model.CustomerRePassword;
 					data.CustomerAddress = model.CustomerAddress;					
-					db.Customers.Add(data);
+					db.tblCustomer.Add(data);
 					db.SaveChanges();	
 				
 				}

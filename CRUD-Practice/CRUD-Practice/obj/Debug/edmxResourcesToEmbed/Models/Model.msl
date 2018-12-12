@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="MvcCRUDDBModelStoreContainer" CdmEntityContainer="MvcCRUDDBEntities1">
-    <EntitySetMapping Name="Customers">
-      <EntityTypeMapping TypeName="MvcCRUDDBModel.Customer">
-        <MappingFragment StoreEntitySet="Customer">
-          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
-          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
-          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
-          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Fish">
       <EntityTypeMapping TypeName="MvcCRUDDBModel.Fish">
         <MappingFragment StoreEntitySet="Fish">
@@ -60,6 +48,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblCustomer">
+      <EntityTypeMapping TypeName="MvcCRUDDBModel.tblCustomer">
+        <MappingFragment StoreEntitySet="tblCustomer">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="DeletedDateTime" ColumnName="DeletedDateTime" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDateTime" ColumnName="UpdatedDateTime" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="AddedDateTime" ColumnName="AddedDateTime" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="USP_GetCustomerList" FunctionName="MvcCRUDDBModel.Store.USP_GetCustomerList">
       <ResultMapping>
         <ComplexTypeMapping TypeName="MvcCRUDDBModel.USP_GetCustomerList_Result">
@@ -69,6 +76,13 @@
           <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
           <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
           <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="AddedDateTime" ColumnName="AddedDateTime" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="UpdatedDateTime" ColumnName="UpdatedDateTime" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedDateTime" ColumnName="DeletedDateTime" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

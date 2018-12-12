@@ -165,9 +165,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Customer.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\Fish.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -197,6 +194,9 @@
     </Compile>
     <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCustomer.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\USP_GetCustomerList_Result.cs">
@@ -530,6 +530,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\SignUp\TemporaryView.cshtml" />
+    <Content Include="Views\Home\_AddEditCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

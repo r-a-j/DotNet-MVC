@@ -5,17 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="MvcCRUDDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Customer">
-          <Key>
-            <PropertyRef Name="CustomerId" />
-          </Key>
-          <Property Name="CustomerId" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="CustomerPhone" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="CustomerPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="Fish">
           <Key>
             <PropertyRef Name="FishId" />
@@ -59,29 +48,36 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerPhone" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CustomerPassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddedDateTime" Type="datetime" />
+          <Property Name="AddedBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdatedDateTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="DeletedBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="DeletedDateTime" Type="datetime" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
         <Function Name="USP_GetCustomerList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="MvcCRUDDBModelStoreContainer">
-          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fish" EntityType="Self.Fish" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FishSeed" EntityType="Self.FishSeed" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCustomer" EntityType="Self.tblCustomer" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MvcCRUDDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Customer">
-          <Key>
-            <PropertyRef Name="CustomerId" />
-          </Key>
-          <Property Name="CustomerId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CustomerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CustomerPhone" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="CustomerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CustomerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
         <EntityType Name="Fish">
           <Key>
             <PropertyRef Name="FishId" />
@@ -126,20 +122,45 @@
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityContainer Name="MvcCRUDDBEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Fish" EntityType="Self.Fish" />
           <EntitySet Name="FishSeeds" EntityType="Self.FishSeed" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tblCustomer" EntityType="MvcCRUDDBModel.tblCustomer" />
           <FunctionImport Name="USP_GetCustomerList" ReturnType="Collection(MvcCRUDDBModel.USP_GetCustomerList_Result)" />
         </EntityContainer>
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerPhone" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CustomerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DeletedBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DeletedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
         <ComplexType Name="USP_GetCustomerList_Result">
           <Property Type="Decimal" Name="CustomerId" Nullable="false" Precision="18" Scale="0" />
-          <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="CustomerEmail" Nullable="false" MaxLength="50" />
-          <Property Type="Decimal" Name="CustomerPhone" Nullable="false" Precision="18" Scale="0" />
-          <Property Type="String" Name="CustomerPassword" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="CustomerAddress" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CustomerEmail" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="CustomerPhone" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="CustomerPassword" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CustomerAddress" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="AddedDateTime" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="AddedBy" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="UpdatedDateTime" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="UpdatedBy" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="DeletedBy" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="DeletedDateTime" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="IsDelete" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -147,18 +168,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MvcCRUDDBModelStoreContainer" CdmEntityContainer="MvcCRUDDBEntities1">
-          <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="MvcCRUDDBModel.Customer">
-              <MappingFragment StoreEntitySet="Customer">
-                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
-                <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
-                <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
-                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Fish">
             <EntityTypeMapping TypeName="MvcCRUDDBModel.Fish">
               <MappingFragment StoreEntitySet="Fish">
@@ -206,6 +215,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblCustomer">
+            <EntityTypeMapping TypeName="MvcCRUDDBModel.tblCustomer">
+              <MappingFragment StoreEntitySet="tblCustomer">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="DeletedDateTime" ColumnName="DeletedDateTime" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDateTime" ColumnName="UpdatedDateTime" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedDateTime" ColumnName="AddedDateTime" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+                <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="USP_GetCustomerList" FunctionName="MvcCRUDDBModel.Store.USP_GetCustomerList">
             <ResultMapping>
               <ComplexTypeMapping TypeName="MvcCRUDDBModel.USP_GetCustomerList_Result">
@@ -215,6 +243,13 @@
                 <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
                 <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
                 <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="AddedDateTime" ColumnName="AddedDateTime" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="UpdatedDateTime" ColumnName="UpdatedDateTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedDateTime" ColumnName="DeletedDateTime" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -4,11 +4,12 @@
 	ViewBag.Title = "Home";
 }
 <br /><br />
+	  <a href="javascript:;" class="btn btn-primary text-black shadow-sm" style="font-family:'Comic Sans MS'; font-weight:bolder; align-content:center; box-shadow:100px; margin-left:100px;" onclick="OpenAddCustomer()">Add New</a>
+	  <br /><br />
 
-
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped shadow-lg">
 	<thead class="thead-dark">
-		<tr>
+		<tr class="shadow-lg">
 			<td class="bg-success" style="font-weight:bolder; font-family:'Comic Sans MS';">Customer Name</td>
 			<td class="bg-success" style="font-weight:bolder; font-family:'Comic Sans MS';">Email</td>
 			<td class="bg-success" style="font-weight:bolder; font-family:'Comic Sans MS';">Address</td>
@@ -19,7 +20,7 @@
 	<tbody>
 		@foreach (var item in Model.lstCustomer)
 		{
-			<tr>
+			<tr class="shadow-sm">
 				<td style="font-weight:bolder; font-family:'Comic Sans MS';">@item.CustomerName</td>
 				<td style="font-weight:bolder; font-family:'Comic Sans MS';">@item.CustomerEmail</td>
 				<td style="font-weight:bolder; font-family:'Comic Sans MS';">@item.CustomerAddress</td>
@@ -29,3 +30,113 @@
 		}
 	</tbody>	
 </table>
+
+<div id="divAddEdit">
+
+</div>
+
+<script>
+
+	function OpenAddCustomer()
+	{
+	
+		$.ajax({
+			url: "/Home/openCustomer/",
+		}).done(function (e) {
+			if (e.error) {
+				alert(e.error);
+			}
+			else {
+				$("#divAddEdit").html(e);
+				$("#dialogAddEdit").modal('show');
+			}
+		});
+	}
+
+	function AddCustomer() {
+
+		// Storing the details of the form into variables
+		var CustomerId = $("#CustomerId").val();
+		var CustomerName = $("#CustomerName").val();
+		var CustomerEmail = $("#CustomerEmail").val();
+		var CustomerAddress = $("#CustomerAddress").val();
+
+		// Variables for regulafr expressions.
+		var flag = false;
+		var emailval = /^\w+([\.-]?\w+)*@@\w+([\.-]?\w+)*(\.\w{2,15})+$/;
+		var exp = /^[a-zA-Z0-9 ,./&]*$/		
+
+		// Checking conditions for CustomerName Special Character.
+		if (CustomerName == "")
+		{
+			$(".clsFirstName").html("Please Enter Name");
+			return flag;
+		}
+		else
+		{
+			if (!exp.test(CustomerName))
+			{
+				$(".clsFirstName").html("Special Character Not Allowed.");
+				return flag;
+			}
+			else
+				$(".clsFirstName").html("");
+		}
+
+		// Checking condition for Customername Length.
+		if (CustomerName != "")
+		{
+			if (CustomerName.length > 50)
+			{
+				$(".clsFirstName").html("Max 50 characters.");
+				return flag;
+			}
+			else
+				$(".clsFirstName").html("");
+		}
+
+		// Checking condition for E-mail Validation.
+		if (CustomerEmail == "")
+		{
+			$(".clsEmail").html("Please Enter Email.");
+			return flag;
+		}
+		else
+		{
+			if (!emailval.test(CustomerEmail))
+			{
+				$(".clsEmail").html("Invalid Email.");
+				return flag;
+			}
+			else
+				$(".clsEmail").html("");
+		}
+		
+		
+		if (flag)
+			return false;
+
+		// Adding Data to model.
+		var model = {
+			"CustomerId": CustomerId,
+			"CustomerName": CustomerName,
+			"CustomerEmail": CustomerEmail,
+			"CustomerAddress": CustomerAddress,
+		}
+
+		
+		
+		$.ajax({
+			url: "/Home/AddCustomer",
+			type: 'POST',
+			data: model
+		}).done(function (e) {
+		
+			$("#divAddEdit").html(e);
+		
+			
+				$("#dialogAddEdit").modal('hide');
+		});
+	}
+
+</script>

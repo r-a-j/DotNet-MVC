@@ -183,8 +183,8 @@ E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\CRUD-Practice\bin\Microsoft.AI.Dep
 E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\CRUD-Practice\bin\Microsoft.AI.WindowsServer.xml
 E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\CRUD-Practice\bin\Microsoft.AI.Web.xml
 E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\CRUD-Practice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\CRUD-Practice\obj\Debug\CRUD-Practice.csprojAssemblyReference.cache
 E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\CRUD-Practice\obj\Debug\CRUD-Practice.csproj.CoreCompileInputs.cache
 E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\CRUD-Practice\obj\Debug\CRUD-Practice.csproj.CopyComplete
 E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\CRUD-Practice\obj\Debug\CRUD-Practice.dll
 E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\CRUD-Practice\obj\Debug\CRUD-Practice.pdb
+E:\RP_Dot-Net\GITHUB\DotNet-MVC\CRUD-Practice\CRUD-Practice\obj\Debug\CRUD-Practice.csprojAssemblyReference.cache

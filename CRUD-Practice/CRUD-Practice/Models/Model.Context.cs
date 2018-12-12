@@ -27,11 +27,11 @@ namespace CRUD_Practice.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Fish> Fish { get; set; }
         public virtual DbSet<FishSeed> FishSeeds { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<tblCustomer> tblCustomer { get; set; }
     
         public virtual ObjectResult<USP_GetCustomerList_Result> USP_GetCustomerList()
         {

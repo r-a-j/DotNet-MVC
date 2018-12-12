@@ -22,8 +22,8 @@ namespace CRUD_Practice.Controllers
 		{
 			using (var db = new MvcCRUDDBEntities1())
 			{
-				var customerData = db.Customers.Where(a => a.CustomerId == id).FirstOrDefault();
-				// if id is the primary key in the database them directly write id
+				var customerData = db.tblCustomer.Where(a => a.CustomerId == id).FirstOrDefault();
+				// if id is the primary key in the database then directly write id
 
 				// This selects all the data of particular di but is slower
 				// var customerData = db.Customers.Find(id);
@@ -56,6 +56,41 @@ namespace CRUD_Practice.Controllers
 				return RedirectToAction("Index");
 			else
 				return null;
+		}
+
+		[HttpPost]
+		public ActionResult AddCustomer(CustomerViewModel model)
+		{
+			using (var db = new MvcCRUDDBEntities1())
+			{
+				tblCustomer data = new tblCustomer();
+				data.CustomerName = model.CustomerName;
+				data.CustomerEmail = model.CustomerEmail;				
+				data.CustomerAddress = model.CustomerAddress;
+				db.tblCustomer.Add(data);
+				db.SaveChanges();
+			}
+
+			return PartialView("_AddEditCustomer", model);
+			
+		}
+
+		[HttpGet]
+		public ActionResult openCustomer(CustomerViewModel model)
+		{
+			CustomerViewModel data = new CustomerViewModel();
+			//using (var db = new MvcCRUDDBEntities1())
+			//{
+
+			//	data.CustomerName = model.CustomerName;
+			//	data.CustomerEmail = model.CustomerEmail;
+			//	data.CustomerAddress = model.CustomerAddress;
+			//	db.tblCustomer.Add(data);
+			//	db.SaveChanges();
+			//}
+
+			return PartialView("_AddEditCustomer", data);
+
 		}
 	}
 }

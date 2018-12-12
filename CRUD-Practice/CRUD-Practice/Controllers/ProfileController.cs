@@ -20,7 +20,7 @@ namespace CRUD_Practice.Controllers
 		{
 			using (var db = new MvcCRUDDBEntities1())
 			{
-				var userData = db.Customers.Where(a => a.CustomerEmail == model.CustomerEmail && a.CustomerPassword == model.CustomerPassword).FirstOrDefault();
+				var userData = db.tblCustomer.Where(a => a.CustomerEmail == model.CustomerEmail && a.CustomerPassword == model.CustomerPassword).FirstOrDefault();
 				if (userData != null)
 				{
 					return RedirectToAction("Index", "Home");

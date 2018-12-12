@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MvcCRUDDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Customer">
-    <Key>
-      <PropertyRef Name="CustomerId" />
-    </Key>
-    <Property Name="CustomerId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="CustomerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="CustomerPhone" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="CustomerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="CustomerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
   <EntityType Name="Fish">
     <Key>
       <PropertyRef Name="FishId" />
@@ -55,19 +44,44 @@
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityContainer Name="MvcCRUDDBEntities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="Fish" EntityType="Self.Fish" />
     <EntitySet Name="FishSeeds" EntityType="Self.FishSeed" />
     <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tblCustomer" EntityType="MvcCRUDDBModel.tblCustomer" />
     <FunctionImport Name="USP_GetCustomerList" ReturnType="Collection(MvcCRUDDBModel.USP_GetCustomerList_Result)" />
   </EntityContainer>
+  <EntityType Name="tblCustomer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerPhone" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CustomerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="AddedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="UpdatedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DeletedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DeletedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsDelete" Type="Boolean" />
+  </EntityType>
   <ComplexType Name="USP_GetCustomerList_Result">
     <Property Type="Decimal" Name="CustomerId" Nullable="false" Precision="18" Scale="0" />
-    <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="CustomerEmail" Nullable="false" MaxLength="50" />
-    <Property Type="Decimal" Name="CustomerPhone" Nullable="false" Precision="18" Scale="0" />
-    <Property Type="String" Name="CustomerPassword" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="CustomerAddress" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerEmail" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="CustomerPhone" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="CustomerPassword" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerAddress" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="AddedDateTime" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="AddedBy" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="UpdatedDateTime" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="UpdatedBy" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="DeletedBy" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="DeletedDateTime" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="true" />
   </ComplexType>
 </Schema>
