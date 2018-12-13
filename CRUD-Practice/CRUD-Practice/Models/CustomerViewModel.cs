@@ -82,5 +82,20 @@ namespace CRUD_Practice.Models
 				return db.SaveChanges() > 0;
 			}
 		}
+
+		public CustomerViewModel getCustomerByID(decimal? id)
+		{
+			using (var db=new MvcCRUDDBEntities1())
+			{
+				var customerData = db.tblCustomer.Where(a => a.CustomerId == id).FirstOrDefault();
+
+				CustomerViewModel model = new CustomerViewModel();
+				model.CustomerId = customerData.CustomerId;
+				model.CustomerEmail = customerData.CustomerEmail;
+				model.CustomerAddress = customerData.CustomerAddress;
+				model.CustomerName = customerData.CustomerName;
+				return model;
+			}
+		}
 	}
 }

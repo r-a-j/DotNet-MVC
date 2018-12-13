@@ -3,9 +3,20 @@
 @{
 	ViewBag.Title = "Home";
 }
+
 <br /><br />
-	  <a href="javascript:;" class="btn btn-primary text-black shadow-sm" style="font-family:'Comic Sans MS'; font-weight:bolder; align-content:center; box-shadow:100px; margin-left:100px;" onclick="OpenAddCustomer()">Add New</a>
-	  <br /><br />
+
+	  <a href="javascript:;" 
+		 class="btn btn-primary text-black shadow-sm"
+		 style="font-family: 'Comic Sans MS';
+			    font-weight: bolder;
+			    align-content: center;
+			    box-shadow: 100px;
+			    margin-left: 100px;"
+	     onclick="OpenAddCustomer()">Add New
+	  </a>
+
+<br /><br />
 
 <table class="table table-bordered table-striped shadow-lg">
 	<thead class="thead-dark">
@@ -16,7 +27,7 @@
 			<td class="bg-warning" style="font-weight:bolder; font-family:'Comic Sans MS';">Edit</td>
 			<td class="bg-danger" style="font-weight:bolder; font-family:'Comic Sans MS';">Delete</td>
 		</tr>
-	</thead>	
+	</thead>
 	<tbody>
 		@foreach (var item in Model.lstCustomer)
 		{
@@ -24,11 +35,31 @@
 				<td style="font-weight:bolder; font-family:'Comic Sans MS';">@item.CustomerName</td>
 				<td style="font-weight:bolder; font-family:'Comic Sans MS';">@item.CustomerEmail</td>
 				<td style="font-weight:bolder; font-family:'Comic Sans MS';">@item.CustomerAddress</td>
-				<td><a href="~/Home/Edit/@item.CustomerId"><h5 style="font-weight:bolder; font-family:'Comic Sans MS'; color:darkorange;">Edit</h5></a></td>
-				<td><a href="~/Home/DeleteCustomer/@item.CustomerId"><h5 style="font-weight:bolder; font-family:'Comic Sans MS'; color:red;">Delete</h5></a></td>
+				<td>
+					@*<a href="~/Home/Edit/@item.CustomerId">*@
+					@*<a href="javascript:;" onclick="openEditCustomer(this)" data-id="@item.CustomerID">*@
+						<a href="javascript:;" data-id="@item.CustomerId" onclick="OpenEditCustomer(this)">
+							<h5 style="font-weight:bolder;
+							   font-family:'Comic Sans MS';
+							   color:darkorange;">
+								Edit
+							</h5>
+						</a>
+				</td>
+
+				<td>
+					<a href="~/Home/DeleteCustomer/@item.CustomerId">
+						<h5 style="font-weight:bolder;
+						       font-family:'Comic Sans MS';
+							   color:red;">
+							Delete
+						</h5>
+					</a>
+				</td>
+
 			</tr>
 		}
-	</tbody>	
+	</tbody>
 </table>
 
 <div id="divAddEdit">
@@ -37,12 +68,28 @@
 
 <script>
 
-	function OpenAddCustomer()
-	{
-	
+	function OpenAddCustomer() {
+
 		$.ajax({
 			url: "/Home/openCustomer/",
 		}).done(function (e) {
+			if (e.error) {
+				alert(e.error);
+			}
+			else {
+				$("#divAddEdit").html(e);
+				$("#dialogAddEdit").modal('show');
+			}
+		});
+	}
+
+	function OpenEditCustomer(obj) {
+		var id = obj.getAttribute('data-id');
+		
+		$.ajax({
+			url: "/Home/openCustomer/" + id,
+		}).done(function (e) {
+			
 			if (e.error) {
 				alert(e.error);
 			}
@@ -64,18 +111,15 @@
 		// Variables for regulafr expressions.
 		var flag = false;
 		var emailval = /^\w+([\.-]?\w+)*@@\w+([\.-]?\w+)*(\.\w{2,15})+$/;
-		var exp = /^[a-zA-Z0-9 ,./&]*$/		
+		var exp = /^[a-zA-Z0-9 ,./&]*$/
 
 		// Checking conditions for CustomerName Special Character.
-		if (CustomerName == "")
-		{
+		if (CustomerName == "") {
 			$(".clsFirstName").html("Please Enter Name");
 			return flag;
 		}
-		else
-		{
-			if (!exp.test(CustomerName))
-			{
+		else {
+			if (!exp.test(CustomerName)) {
 				$(".clsFirstName").html("Special Character Not Allowed.");
 				return flag;
 			}
@@ -84,10 +128,8 @@
 		}
 
 		// Checking condition for Customername Length.
-		if (CustomerName != "")
-		{
-			if (CustomerName.length > 50)
-			{
+		if (CustomerName != "") {
+			if (CustomerName.length > 50) {
 				$(".clsFirstName").html("Max 50 characters.");
 				return flag;
 			}
@@ -96,23 +138,20 @@
 		}
 
 		// Checking condition for E-mail Validation.
-		if (CustomerEmail == "")
-		{
+		if (CustomerEmail == "") {
 			$(".clsEmail").html("Please Enter Email.");
 			return flag;
 		}
-		else
-		{
-			if (!emailval.test(CustomerEmail))
-			{
+		else {
+			if (!emailval.test(CustomerEmail)) {
 				$(".clsEmail").html("Invalid Email.");
 				return flag;
 			}
 			else
 				$(".clsEmail").html("");
 		}
-		
-		
+
+
 		if (flag)
 			return false;
 
@@ -124,18 +163,25 @@
 			"CustomerAddress": CustomerAddress,
 		}
 
-		
-		
 		$.ajax({
 			url: "/Home/AddCustomer",
 			type: 'POST',
 			data: model
 		}).done(function (e) {
-		
-			$("#divAddEdit").html(e);
-		
+			$("#dialogAddEdit").modal('hide');
+			if (CustomerId > 0) {
+				
+				window.location.href = "Home/Index";
+			}
+			else {
+				window.location.href = "Home/Index";
+				$("#divAddEdit").html(e);
+
+			}
+			if	(	e.msg = "isemailexist"){
+				alert("E-mail already exists");
+			}
 			
-				$("#dialogAddEdit").modal('hide');
 		});
 	}
 

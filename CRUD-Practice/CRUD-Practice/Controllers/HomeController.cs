@@ -64,11 +64,24 @@ namespace CRUD_Practice.Controllers
 			using (var db = new MvcCRUDDBEntities1())
 			{
 				tblCustomer data = new tblCustomer();
-				data.CustomerName = model.CustomerName;
-				data.CustomerEmail = model.CustomerEmail;				
-				data.CustomerAddress = model.CustomerAddress;
-				db.tblCustomer.Add(data);
-				db.SaveChanges();
+				if (model.CustomerId > 0)
+				{
+
+					var result = model.EditCustomer(model);
+					
+
+					return Json(new { msg = "success", JsonRequestBehavior.AllowGet });
+				}
+				else
+				{
+					data.CustomerName = model.CustomerName;
+					data.CustomerEmail = model.CustomerEmail;
+					data.CustomerAddress = model.CustomerAddress;
+					db.tblCustomer.Add(data);
+					db.SaveChanges();
+				}
+				
+				
 			}
 
 			return PartialView("_AddEditCustomer", model);
@@ -76,18 +89,14 @@ namespace CRUD_Practice.Controllers
 		}
 
 		[HttpGet]
-		public ActionResult openCustomer(CustomerViewModel model)
+		public ActionResult openCustomer(decimal? id)
 		{
 			CustomerViewModel data = new CustomerViewModel();
-			//using (var db = new MvcCRUDDBEntities1())
-			//{
 
-			//	data.CustomerName = model.CustomerName;
-			//	data.CustomerEmail = model.CustomerEmail;
-			//	data.CustomerAddress = model.CustomerAddress;
-			//	db.tblCustomer.Add(data);
-			//	db.SaveChanges();
-			//}
+			if (id > 0)
+			{
+				data = data.getCustomerByID(id);
+			}
 
 			return PartialView("_AddEditCustomer", data);
 
